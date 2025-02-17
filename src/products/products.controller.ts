@@ -35,7 +35,7 @@ export class ProductsController {
     @UploadedFile() file: Express.Multer.File,
   ): Promise<Product> {
     console.log(createProductDto);
-    const imageUrl = `http://localhost:3000/uploads/${file.filename}`;
+    const imageUrl = `http://localhost:3000/${file.filename}`;
     return this.productsService.create(createProductDto, imageUrl);
   }
 
